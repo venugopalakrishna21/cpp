@@ -1,13 +1,16 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 void showMenu() {
-    cout << "Simple Calculator" << endl;
+    cout << "Advanced Calculator" << endl;
     cout << "1. Addition" << endl;
     cout << "2. Subtraction" << endl;
     cout << "3. Multiplication" << endl;
     cout << "4. Division" << endl;
-    cout << "5. Exit" << endl;
+    cout << "5. Power" << endl;
+    cout << "6. Square Root" << endl;
+    cout << "7. Exit" << endl;
     cout << "Enter your choice: ";
 }
 
@@ -41,13 +44,26 @@ int main() {
                     cout << "Error: Division by zero!" << endl;
                 break;
             case 5:
+                cout << "Enter base and exponent: ";
+                cin >> num1 >> num2;
+                cout << "Result: " << pow(num1, num2) << endl;
+                break;
+            case 6:
+                cout << "Enter number: ";
+                cin >> num1;
+                if (num1 >= 0)
+                    cout << "Result: " << sqrt(num1) << endl;
+                else
+                    cout << "Error: Negative number!" << endl;
+                break;
+            case 7:
                 cout << "Exiting..." << endl;
                 break;
             default:
                 cout << "Invalid choice! Try again." << endl;
         }
     
-    } while (choice != 5);
+    } while (choice != 7);
     
     return 0;
 }
